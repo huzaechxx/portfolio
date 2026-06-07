@@ -124,7 +124,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
   const [stagedImages, setStagedImages] = useState<StagedFile[]>([])
   const [existingImages, setExistingImages] = useState<string[]>(initialData?.images || [])
   // Cover: index into combined list or 'video' — stores the final URL after upload
-  const [coverImageUrl, setCoverImageUrl] = useState(initialData?.coverImage || '')
+  const coverImageUrl = initialData?.coverImage || ''
   // Which image is selected as cover: 'existing:N' | 'staged:N' | ''
   const [coverSelection, setCoverSelection] = useState<string>(
     initialData?.coverImage ? 'existing:0' : ''

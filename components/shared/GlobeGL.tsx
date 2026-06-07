@@ -2,11 +2,24 @@
 
 import { useEffect, useRef } from 'react'
 
+interface GlobeInstance {
+  pointOfView: (pov: { lat: number; lng: number; altitude: number }, ms?: number) => void
+  controls: () => {
+    autoRotate: boolean
+    autoRotateSpeed: number
+    enableZoom: boolean
+    enablePan: boolean
+    enableRotate: boolean
+    update: () => void
+  }
+}
+
 export default function GlobeGL() {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!mountRef.current) return
+    const container = mountRef.current
+    if (!container) return
 
     let destroyed = false
     let rafId: number
@@ -16,7 +29,7 @@ export default function GlobeGL() {
       const ReactDOM = await import('react-dom/client')
       const React = await import('react')
 
-      if (destroyed || !mountRef.current) return
+      if (destroyed || !container) return
 
       const points = [
         { lat: 30.0, lng: 72.0, size: 0.5, color: '#ff5500' },
@@ -27,7 +40,7 @@ export default function GlobeGL() {
         { startLat: 30.0, startLng: 72.0, endLat: 52.0, endLng: 10.0, color: '#ff5500' },
       ]
 
-      const el = React.createElement(GlobeLib as any, {
+      const el = React.createElement(GlobeLib as React.ElementType, {
         width: 480,
         height: 480,
         backgroundColor: 'rgba(0,0,0,0)',
@@ -45,7 +58,7 @@ export default function GlobeGL() {
         arcDashAnimateTime: 2000,
         arcStroke: 0.5,
         enablePointerInteraction: false,
-        onGlobeReady: (g: any) => {
+        onGlobeReady: (g: GlobeInstance) => {
           g.pointOfView({ lat: 30, lng: 40, altitude: 2.2 }, 0)
 
           const controls = g.controls()
@@ -55,7 +68,6 @@ export default function GlobeGL() {
           controls.enablePan = false
           controls.enableRotate = false
 
-          // controls.update() must be called each frame for autoRotate to work
           function tick() {
             if (destroyed) return
             controls.update()
@@ -65,8 +77,8 @@ export default function GlobeGL() {
         },
       })
 
-      if (!destroyed && mountRef.current) {
-        const root = ReactDOM.createRoot(mountRef.current)
+      if (!destroyed && container) {
+        const root = ReactDOM.createRoot(container)
         root.render(el)
       }
     }
@@ -76,7 +88,7 @@ export default function GlobeGL() {
     return () => {
       destroyed = true
       cancelAnimationFrame(rafId)
-      if (mountRef.current) mountRef.current.innerHTML = ''
+      container.innerHTML = ''
     }
   }, [])
 

@@ -27,8 +27,6 @@ export async function POST(req: NextRequest) {
 
   const formData = await req.formData()
   const file = formData.get('file') as File | null
-  const type = (formData.get('type') as string) || 'image'
-
   if (!file) return NextResponse.json({ error: 'No file provided' }, { status: 400 })
 
   const isImage = ALLOWED_IMAGE_TYPES.includes(file.type)

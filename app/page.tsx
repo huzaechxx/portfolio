@@ -19,8 +19,9 @@ export default async function HomePage() {
       take: 3,
       orderBy: { createdAt: 'desc' },
     })
-  } catch (e: any) {
-    console.error('[DB] findMany error code:', e?.code, 'meta:', JSON.stringify(e?.meta))
+  } catch (e: unknown) {
+    const err = e as { code?: string; meta?: unknown }
+    console.error('[DB] findMany error code:', err?.code, 'meta:', JSON.stringify(err?.meta))
   }
 
   return (
