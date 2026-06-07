@@ -138,7 +138,7 @@ export default async function CaseStudyPage({
 
           {/* Tech stack */}
           <div className="flex flex-wrap gap-2 mb-12">
-            {project.techStack.map((tech) => (
+            {project.techStack.map((tech: string) => (
               <span
                 key={tech}
                 className="border border-[#ff5500]/40 text-[#ff5500] text-xs font-mono px-3 py-1 rounded-sm"
@@ -185,7 +185,7 @@ export default async function CaseStudyPage({
               Deliverables
             </h2>
             <ul className="space-y-3">
-              {project.deliverables.map((d) => (
+              {project.deliverables.map((d: string) => (
                 <li
                   key={d}
                   className="flex items-start gap-2 text-[#888888] font-mono text-sm"
@@ -204,7 +204,7 @@ export default async function CaseStudyPage({
                 Results & Impact
               </h2>
               <ul className="space-y-3">
-                {project.results.map((r) => (
+                {project.results.map((r: string) => (
                   <li
                     key={r}
                     className="flex items-start gap-2 text-[#f5f5f5] font-mono text-sm"
@@ -237,7 +237,7 @@ export default async function CaseStudyPage({
                 Assets
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.images.map((img, i) => (
+                {project.images.map((img: string, i: number) => (
                   <img
                     key={i}
                     src={img}
