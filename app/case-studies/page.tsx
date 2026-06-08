@@ -42,7 +42,7 @@ export default async function CaseStudiesPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {projects.map((project, i) => (
+              {projects.map((project: { id: number; title: string; problem: string; techStack: string[]; slug: string }, i: number) => (
                 <ProjectCard
                   key={project.id}
                   title={project.title}
