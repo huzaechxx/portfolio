@@ -15,11 +15,15 @@ export const metadata: Metadata = generateSEO({
 })
 
 export default async function CaseStudiesPage() {
-  const projects = await prisma.project.findMany({
-    where: { published: true },
-    orderBy: { createdAt: 'desc' },
-    select: { id: true, slug: true, title: true, problem: true, techStack: true },
-  })
+  let projects: { id: number; slug: string; title: string; problem: string; techStack: string[] }[] = []
+  try {
+    projects = await prisma.project.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+    })
+  } catch {
+    // DB unavailable — render empty state
+  }
 
   return (
     <>
@@ -42,7 +46,7 @@ export default async function CaseStudiesPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {projects.map((project: { id: number; title: string; problem: string; techStack: string[]; slug: string }, i: number) => (
+              {projects.map((project, i) => (
                 <ProjectCard
                   key={project.id}
                   title={project.title}
