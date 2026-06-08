@@ -15,7 +15,7 @@ export default async function HomePage() {
   let projects: Awaited<ReturnType<typeof prisma.project.findMany>> = []
   try {
     projects = await prisma.project.findMany({
-      where: { published: true, featured: true },
+      where: { published: true },
       take: 3,
       orderBy: { createdAt: 'desc' },
     })
