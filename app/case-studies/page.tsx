@@ -36,7 +36,7 @@ export default async function CaseStudiesPage() {
               Work That Speaks For Itself
             </h1>
             <p className="text-[#888888] font-mono text-base max-w-xl">
-              Real automation projects, real results. Every case study shows the problem, our solution, and the measurable outcome.
+              Real projects, real results. Every case study shows the problem, our solution, and the measurable outcome — software, data, or automation.
             </p>
           </ScrollReveal>
 

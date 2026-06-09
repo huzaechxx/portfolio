@@ -47,10 +47,10 @@ export default function ContactPage() {
           <ScrollReveal className="mb-16">
             <span className="text-[#ff5500] font-mono text-xs uppercase tracking-widest">Get In Touch</span>
             <h1 className="font-sans font-extrabold text-4xl md:text-6xl text-white mt-2 mb-4">
-              Book a Free Audit
+              Book a Free Discovery Call
             </h1>
             <p className="text-[#888888] font-mono text-base max-w-xl">
-              30 minutes. No commitment. We&apos;ll map out what can be automated in your business and what the ROI looks like.
+              30 minutes. No commitment. Tell us your challenge — software, data, or automation — and we&apos;ll map out the right solution and what it takes to get there.
             </p>
           </ScrollReveal>
 
@@ -107,8 +107,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="block text-[#888888] font-mono text-xs uppercase tracking-widest mb-2">
-                      What problem are you facing? *{' '}
-                      <span className="normal-case text-[#444444]">(helps us provide better researched solutions for you)</span>
+                      What are you looking to build or solve? *{' '}
+                      <span className="normal-case text-[#444444]">(helps us come prepared with the right solution)</span>
                     </label>
                     <textarea
                       value={message}
@@ -116,7 +116,7 @@ export default function ContactPage() {
                       required
                       rows={5}
                       className={`${inputClass} resize-none`}
-                      placeholder="Describe the challenge or bottleneck in your business — what's taking too long, costing too much, or causing errors..."
+                      placeholder="Describe what you're trying to build or fix — a data pipeline, a web app, an automation, or a system integration..."
                     />
                   </div>
 

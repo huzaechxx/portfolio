@@ -16,22 +16,22 @@ const services: Record<string, {
   results: string[]
   faqs: { question: string; answer: string }[]
 }> = {
-  'n8n-workflow-automation': {
-    name: 'n8n Workflow Automation',
-    description: 'We design and deploy n8n workflows that connect your tools, eliminate repetitive tasks, and scale your operations — without hiring more staff.',
-    intro: 'n8n is the most powerful open-source workflow automation platform available. We use it to build visual pipelines that connect your entire tech stack — from CRMs and email to databases and AI.',
+  'workflow-automation': {
+    name: 'Workflow Automation',
+    description: 'We design and deploy intelligent automation systems using n8n, Make.com, and Zapier — connecting your tools, eliminating repetitive work, and keeping your operations running 24/7.',
+    intro: 'Modern businesses run on dozens of tools that don\'t talk to each other. We build the workflows that connect them — visual, maintainable pipelines using n8n and Make.com that trigger smart actions across your entire stack without adding headcount.',
     howWeDoIt: [
-      'Discovery call to map your current manual processes',
+      'Discovery call to map your current manual processes and bottlenecks',
       'Identify the highest-ROI workflows to automate first',
-      'Build and test the n8n pipeline in a staging environment',
-      'Deploy, monitor, and hand off with full documentation',
+      'Build and test pipelines in a staging environment with real data',
+      'Deploy, set up monitoring, and hand off with full documentation',
     ],
     useCases: [
-      'Automated invoice creation and sending',
-      'Lead capture → CRM sync → welcome email sequence',
-      'Slack notifications from any trigger',
+      'CRM data sync and lead nurturing sequences',
+      'Automated invoice generation and sending',
+      'Multi-step approval and onboarding flows',
+      'Slack/Teams notifications from any system trigger',
       'Scheduled data sync between platforms',
-      'Error alerting and monitoring pipelines',
     ],
     results: [
       'Typical time savings: 5–20 hours per week',
@@ -39,121 +39,149 @@ const services: Record<string, {
       'Scales infinitely without additional headcount',
     ],
     faqs: [
-      { question: 'Do I need to know how to code to use n8n?', answer: 'No. We build and maintain the workflows for you. Your team just benefits from the results.' },
-      { question: 'Can n8n connect to any tool we use?', answer: 'n8n supports 400+ integrations natively. For anything else, we can use their HTTP node to connect to any REST API.' },
-      { question: 'What happens if a workflow breaks?', answer: 'We set up error monitoring and alerting so you\'re notified immediately. We also offer retainer packages with ongoing maintenance.' },
+      { question: 'Which automation platforms do you work with?', answer: 'Primarily n8n, Make.com, and Zapier. We recommend n8n for most clients due to its flexibility, self-hosting capability, and lack of per-task pricing.' },
+      { question: 'Do I need technical knowledge to manage the workflows?', answer: 'No. We build and document everything so your team can understand what\'s running. For ongoing changes, our retainer plans cover maintenance and new builds.' },
+      { question: 'What happens if a workflow breaks?', answer: 'We set up error monitoring and alerting as part of every deployment. Retainer clients get priority response and fixes included.' },
     ],
   },
   'ai-integration-agents': {
     name: 'AI Integration & Agents',
-    description: 'We embed OpenAI and Anthropic models into your business processes — from document processing to fully autonomous AI agents that handle complex decisions.',
-    intro: 'AI is only useful if it\'s actually integrated into your workflow. We build the pipelines that take LLM capabilities and make them work reliably inside your specific business context.',
+    description: 'We embed OpenAI, Anthropic, and custom LLM models into your business processes — from intelligent document processing to fully autonomous agents that handle complex decisions end-to-end.',
+    intro: 'AI is only useful when it\'s actually integrated into your workflow. We build the pipelines that take LLM capabilities — reasoning, extraction, generation, classification — and make them work reliably inside your specific business context at production scale.',
     howWeDoIt: [
       'Map the decision or processing task you want to automate',
       'Select the right model and design the prompt architecture',
-      'Build the integration pipeline with proper error handling',
-      'Test with real data, iterate, deploy, and monitor',
+      'Build the integration pipeline with proper error handling and fallbacks',
+      'Test with real data, iterate, deploy, and monitor in production',
     ],
     useCases: [
-      'Customer support ticket triage and routing',
-      'Automated document summarization and extraction',
-      'AI-generated first-draft responses',
-      'Intelligent data categorization',
+      'Customer support ticket triage and intelligent routing',
+      'Automated document summarization and data extraction',
+      'Custom RAG pipelines over internal knowledge bases',
       'Autonomous multi-step agent workflows',
+      'AI-powered data classification and tagging at scale',
     ],
     results: [
-      '60–80% reduction in manual classification tasks',
-      'Consistent quality output at any volume',
+      '60–80% reduction in manual classification and processing tasks',
+      'Consistent output quality regardless of volume',
       'Response times drop from hours to seconds',
     ],
     faqs: [
-      { question: 'Which AI models do you work with?', answer: 'Primarily OpenAI (GPT-4o) and Anthropic (Claude). We pick the best model for your specific use case based on capability, cost, and speed.' },
-      { question: 'How do you handle sensitive data?', answer: 'We can configure pipelines to avoid sending sensitive data to third-party APIs, or use self-hosted/private models for maximum compliance.' },
-      { question: 'What if the AI makes mistakes?', answer: 'We design human-in-the-loop checkpoints for high-stakes decisions, and build confidence-scoring so low-confidence outputs are flagged for review.' },
+      { question: 'Which AI models do you work with?', answer: 'Primarily OpenAI (GPT-4o) and Anthropic (Claude). We select the best model per use case based on capability, cost, speed, and context window requirements.' },
+      { question: 'How do you handle sensitive data?', answer: 'We can build pipelines that avoid sending sensitive fields to third-party APIs, or use self-hosted / private-deployment models for full compliance.' },
+      { question: 'What if the AI makes mistakes?', answer: 'We design human-in-the-loop checkpoints for high-stakes decisions and build confidence-scoring so low-confidence outputs are flagged for human review rather than passed through.' },
     ],
   },
-  'python-selenium-automation': {
-    name: 'Python & Selenium Automation',
-    description: 'When no-code tools hit their limits, we write robust Python scripts and Selenium automations that handle complex browser interactions and system integrations.',
-    intro: 'Some automation problems require real code. We write clean, maintainable Python that handles file processing, browser automation, API calls, and data transformation at any scale.',
+  'data-engineering': {
+    name: 'Data Engineering & ETL',
+    description: 'We transform your raw data lake into clean, structured pipelines — building reliable ETL/ELT workflows, automating data ingestion, and engineering the data foundation your analytics and AI models depend on.',
+    intro: 'Raw data is worthless without reliable infrastructure to move, clean, and transform it. We design and build the pipelines that collect data from every source, validate and standardise it, and deliver it to the right destination — on schedule, at scale, without breaking.',
     howWeDoIt: [
-      'Define the exact task, inputs, outputs, and edge cases',
-      'Write modular Python scripts with proper error handling',
-      'Test against real environments with real data',
-      'Deploy, schedule (cron/cloud), and document',
+      'Audit your current data sources, formats, and quality issues',
+      'Design the pipeline architecture — ingestion, transformation, and storage layers',
+      'Build ETL/ELT pipelines with schema validation and error handling',
+      'Set up monitoring, alerting, and automated quality checks',
     ],
     useCases: [
-      'Automated form filling and data entry',
-      'Browser-based login and data extraction',
-      'PDF generation and manipulation',
-      'Bulk file renaming and organization',
-      'Legacy system integrations without APIs',
+      'Raw data lake transformation into analytics-ready datasets',
+      'Large-scale data migration between systems or cloud providers',
+      'Automated ingestion pipelines from APIs, databases, and flat files',
+      'Real-time and batch data processing workflows',
+      'Data quality enforcement and deduplication at scale',
     ],
     results: [
-      'Tasks that took hours now run in minutes',
-      'Zero human error in data processing',
-      'Runs on any schedule, including real-time triggers',
+      'Data reliability goes from ad-hoc to production-grade',
+      'Analyst time spent on data prep drops by 60–80%',
+      'Pipelines run on schedule with automated alerts on failure',
     ],
     faqs: [
-      { question: 'Will Selenium break when websites update?', answer: 'We write resilient selectors and add monitoring so we know immediately if a scraper breaks. Maintenance is included in retainer packages.' },
-      { question: 'Can you run Python scripts on our servers?', answer: 'Yes. We can deploy to your infrastructure, our cloud, or a simple VPS — whatever suits your security requirements.' },
-      { question: 'What about headless browser detection?', answer: 'We handle anti-bot measures with proper user-agent rotation, delays, and stealth configurations where legally appropriate.' },
+      { question: 'What tools do you use for data engineering?', answer: 'Python, SQL, dbt for transformations, Airflow or n8n for orchestration, and PostgreSQL / Supabase / BigQuery as targets depending on your stack.' },
+      { question: 'Can you handle large-scale migrations?', answer: 'Yes. We\'ve designed migration pipelines for millions of rows, with rollback plans, validation checks, and zero-downtime strategies.' },
+      { question: 'What if our data is messy and inconsistent?', answer: 'That\'s exactly what we fix. We start with a data audit, identify quality issues, and build cleaning logic into the pipeline so downstream consumers always get reliable data.' },
     ],
   },
-  'web-scraping-data-pipelines': {
-    name: 'Web Scraping & Data Pipelines',
-    description: 'Production-grade scrapers with Playwright and Puppeteer that extract, clean, and deliver structured data to your database or dashboard — on any schedule.',
-    intro: 'Data is only valuable if you can access it. We build scrapers that run reliably at scale, handle dynamic JS-heavy sites, and deliver clean, structured data wherever you need it.',
+  'analytics-bi': {
+    name: 'Analytics & Business Intelligence',
+    description: 'We turn your structured data into actionable dashboards and reports — building Power BI views, custom analytics pipelines, and KPI tracking systems that give your team a real-time picture of performance.',
+    intro: 'Having data isn\'t the same as understanding your business. We connect your data sources, define your key metrics, and build the analytics layer that surfaces what actually matters — automatically updated, properly governed, and built for decision-making.',
     howWeDoIt: [
-      'Analyse the target site structure and data availability',
-      'Build scraper with proper pagination and error handling',
-      'Set up data cleaning and transformation pipeline',
-      'Store in your database or deliver to Sheets/CSV/API',
+      'Define KPIs and reporting requirements with stakeholders',
+      'Connect and validate all relevant data sources',
+      'Design the data model and dashboard architecture',
+      'Build, test, and hand off with documentation and training',
     ],
     useCases: [
-      'Competitor price monitoring (100–10,000 SKUs)',
-      'Real estate listing aggregation',
-      'Job board monitoring and alerts',
-      'News and content aggregation',
-      'Market research and trend data',
+      'Power BI dashboard design and deployment',
+      'Executive KPI reporting and performance scorecards',
+      'Operational dashboards for logistics, sales, and support',
+      'Marketing analytics and campaign attribution',
+      'Custom analytics for finance, HR, and supply chain',
     ],
     results: [
-      'Real-time competitive intelligence at scale',
-      '100% structured, clean data — no manual cleanup',
-      'Thousands of data points collected per hour',
+      'Decision-relevant metrics available in real time instead of weekly reports',
+      'Single source of truth — no more conflicting spreadsheets',
+      'Analyst time spent building manual reports drops by 70%+',
     ],
     faqs: [
-      { question: 'Is web scraping legal?', answer: 'It depends on the site and how data is used. We always review robots.txt and Terms of Service, and only build scrapers for legitimate business use cases.' },
-      { question: 'What if the site uses CAPTCHAs?', answer: 'We use CAPTCHA-solving services and rate limiting strategies. For heavily protected sites, we first check if an official API or data feed exists.' },
-      { question: 'Where does the scraped data go?', answer: 'Anywhere you need it — PostgreSQL, Supabase, Google Sheets, Airtable, a REST API, or a flat CSV file on a schedule.' },
+      { question: 'Do you only work with Power BI?', answer: 'Power BI is our primary tool for most enterprise clients, but we also work with Metabase, Superset, and custom-built dashboards depending on your stack and preferences.' },
+      { question: 'What data sources can you connect?', answer: 'Any source with a connector or API — SQL databases, Supabase, Google Sheets, REST APIs, CSV files, Airtable, Salesforce, and more.' },
+      { question: 'Can you train our team to use the dashboards?', answer: 'Yes. Every handoff includes documentation and a walkthrough session. We can also run broader training for teams who want to build on top of what we deliver.' },
     ],
   },
-  'custom-api-integrations': {
-    name: 'Custom API Integrations',
-    description: 'We connect any two systems that have an API — regardless of whether they have a native integration — so your stack works as one seamless operation.',
-    intro: 'Modern businesses run on dozens of tools that don\'t talk to each other. We build the glue — custom API integrations that keep your data consistent and your workflows smooth.',
+  'web-app-development': {
+    name: 'Web & App Development',
+    description: 'We build fast, scalable web applications, SaaS products, and internal tools using modern frameworks — from concept to production, with clean architecture and seamless integrations built in from day one.',
+    intro: 'Whether you need a customer-facing web app, an internal operations tool, or a full SaaS product, we build it with a tech stack that scales and a codebase you can own. Our default stack is Next.js, React, FastAPI, and PostgreSQL — battle-tested, modern, and maintainable.',
     howWeDoIt: [
-      'Map the data flow between the two systems',
-      'Authenticate and test API connections',
-      'Build the transformation and sync logic',
-      'Handle edge cases, errors, and rate limits',
+      'Requirements scoping and technical architecture design',
+      'Iterative development with milestone-based delivery',
+      'Integration of third-party APIs, auth, payments, and data',
+      'Deployment, performance optimisation, and handoff',
     ],
     useCases: [
-      'E-commerce orders → accounting software',
-      'CRM contacts → email marketing platform',
-      'Payment gateway → internal database',
-      'Webhook events → Slack notifications',
-      'ERP data → custom dashboard',
+      'SaaS product development from MVP to production',
+      'Internal operations tools and admin dashboards',
+      'Customer portals and self-service platforms',
+      'Business process applications replacing manual workflows',
+      'CRM and ERP custom frontends and backends',
     ],
     results: [
-      'Single source of truth across all your tools',
-      'No more manual data export/import',
-      'Real-time sync instead of daily batch updates',
+      'Shipped on schedule with a clean, documented codebase',
+      'Modern, performant stack that handles real production load',
+      'Fully integrated with your existing tools and data sources',
     ],
     faqs: [
-      { question: 'What if one of our tools doesn\'t have an API?', answer: 'We can often use web scraping, file-based integrations (CSV/SFTP), or database-level connections as alternatives.' },
-      { question: 'How do you handle API rate limits?', answer: 'We build rate-limit-aware queuing and backoff strategies so integrations never hit API limits or lose data.' },
-      { question: 'Can you maintain the integration long-term?', answer: 'Yes. APIs change — endpoints deprecate, auth methods update. Our retainer packages include ongoing maintenance and monitoring.' },
+      { question: 'What tech stack do you use?', answer: 'Our default is Next.js + React on the frontend, FastAPI or Node.js on the backend, and PostgreSQL (via Supabase or direct) for the database. We adapt based on project requirements.' },
+      { question: 'Do you handle design as well as development?', answer: 'We work from your designs or existing brand guidelines. For projects without designs, we can recommend and coordinate with UI/UX designers.' },
+      { question: 'Will we own the codebase?', answer: 'Yes, always. You get full ownership of all code, deployments, and infrastructure. We provide documentation and handoff support as part of every project.' },
+    ],
+  },
+  'api-systems-integration': {
+    name: 'API & Systems Integration',
+    description: 'We connect any two systems that expose an API — building the middleware, webhooks, and integration layers that make your entire stack work as one coherent, reliable system.',
+    intro: 'Every integration that doesn\'t exist is a manual process waiting to happen. We map your system architecture, identify the gaps, and build the connective tissue — whether it\'s a simple webhook handler or a complex multi-system orchestration with transformation logic, queuing, and error recovery.',
+    howWeDoIt: [
+      'Map the data flows and identify integration gaps in your stack',
+      'Build authentication, connection, and data transformation logic',
+      'Implement error handling, retry logic, and rate-limit strategies',
+      'Deploy with monitoring and alerting on all integration points',
+    ],
+    useCases: [
+      'E-commerce orders synced to accounting and ERP systems',
+      'CRM contacts pushed to email marketing and ad platforms',
+      'Payment gateway events routed to internal databases',
+      'Webhook events processed and fanned out to multiple systems',
+      'Legacy system modernisation via API bridging',
+    ],
+    results: [
+      'Single source of truth across all tools — no data drift',
+      'Manual data export/import workflows eliminated completely',
+      'Real-time sync replaces daily or weekly batch transfers',
+    ],
+    faqs: [
+      { question: 'What if one of our tools doesn\'t have an API?', answer: 'We can often use file-based integrations (CSV/SFTP), database-level connections, or web scraping as alternatives to missing APIs.' },
+      { question: 'How do you handle API rate limits?', answer: 'We build rate-limit-aware queuing and exponential backoff so integrations never drop data or hit API limits, even under high volume.' },
+      { question: 'Can you maintain integrations long-term?', answer: 'Yes. APIs evolve — endpoints change, auth methods update, schemas shift. Our retainer plans include ongoing maintenance and proactive monitoring.' },
     ],
   },
 }
@@ -262,12 +290,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           {/* CTA */}
           <div className="border-t border-[#1f1f1f] pt-12 text-center">
             <h2 className="font-sans font-bold text-2xl text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-[#888888] font-mono text-sm mb-6">Book a free 30-minute audit and we&apos;ll map out exactly what we can automate for you.</p>
+            <p className="text-[#888888] font-mono text-sm mb-6">Book a free 30-minute discovery call and we&apos;ll map out the right solution for your specific challenge.</p>
             <Link
               href="/contact"
               className="inline-block bg-[#ff5500] text-white px-8 py-3 font-mono text-sm hover:bg-[#ff5500]/90 transition-all rounded-sm"
             >
-              Book Free Audit →
+              Book Free Discovery Call →
             </Link>
           </div>
         </div>

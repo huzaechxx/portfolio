@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-sans font-bold text-lg text-white">AutoNord.ai</span>
             </div>
             <p className="text-[#888888] text-sm font-mono leading-relaxed max-w-xs">
-              AI workflows and automation systems built for modern businesses. We automate so you can scale.
+              Custom software, data pipelines, and AI automation built for modern businesses. We build so you can scale.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="border-t border-[#1f1f1f] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#444444] text-sm font-mono">© 2025 AutoNord.ai. All rights reserved.</p>
-          <p className="text-[#444444] text-sm font-mono">AI Automation Agency</p>
+          <p className="text-[#444444] text-sm font-mono">Software & Data Agency</p>
         </div>
       </div>
     </footer>

@@ -26,12 +26,12 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 border border-[#ff5500]/30 text-[#ff5500] text-xs font-mono px-3 py-1.5 rounded-full mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500] animate-pulse" />
-          AI Automation Agency
+          Software & Data Agency
         </motion.div>
 
         {/* Headline line 1 */}
         <h1 className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tighter mb-2">
-          <AnimatedText text="WE AUTOMATE." className="text-white" delay={0.2} />
+          <AnimatedText text="WE BUILD." className="text-white" delay={0.2} />
         </h1>
         {/* Headline line 2 */}
         <h1 className="font-sans font-extrabold text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tighter mb-8">
@@ -45,7 +45,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 1.4 }}
           className="text-[#888888] font-mono text-base md:text-lg max-w-2xl mx-auto mb-10"
         >
-          AI workflows and automation systems built for modern businesses.
+          Custom software, data pipelines, and AI automation built for modern businesses.
           <br className="hidden md:block" />
           Save time, cut costs, scale faster.
         </motion.p>

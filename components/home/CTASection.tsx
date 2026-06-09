@@ -48,14 +48,14 @@ export default function CTASection() {
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Heading */}
         <ScrollReveal className="text-center mb-12">
-          <span className="text-[#ff5500] font-mono text-xs uppercase tracking-widest">Free Audit</span>
+          <span className="text-[#ff5500] font-mono text-xs uppercase tracking-widest">Free Discovery Call</span>
           <h2 className="font-sans font-extrabold text-4xl md:text-5xl text-white mt-2 mb-4 leading-tight">
-            Ready to Stop Doing
+            Ready to Build Something
             <br />
-            <span className="text-[#ff5500]">Things Manually?</span>
+            <span className="text-[#ff5500]">That Actually Works?</span>
           </h2>
           <p className="text-[#888888] font-mono text-sm">
-            Book a free 30-minute automation audit. No commitment, no pitch — just clarity on what can be automated in your business.
+            Book a free 30-minute discovery call. Tell us your challenge — software, data, or automation — and we&apos;ll map out the best path forward.
           </p>
         </ScrollReveal>
 
@@ -109,9 +109,9 @@ export default function CTASection() {
 
               <div>
                 <label className="block text-[#888888] font-mono text-xs uppercase tracking-widest mb-2">
-                  What problem are you facing? *{' '}
+                  What are you looking to build or solve? *{' '}
                   <span className="normal-case text-[#444444]">
-                    (helps us provide better researched solutions for you)
+                    (helps us come prepared with the right solution)
                   </span>
                 </label>
                 <textarea
@@ -120,7 +120,7 @@ export default function CTASection() {
                   required
                   rows={4}
                   className={`${inputClass} resize-none`}
-                  placeholder="Describe the challenge or bottleneck in your business — what's taking too long, costing too much, or causing errors..."
+                  placeholder="Describe what you're trying to build or fix — a data pipeline, a web app, an automation, or a system integration..."
                 />
               </div>
 
@@ -133,11 +133,11 @@ export default function CTASection() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-[#ff5500] text-white py-4 font-mono text-sm hover:bg-[#ff5500]/90 transition-all rounded-sm disabled:opacity-60"
               >
-                {loading ? 'Sending...' : 'Book Free Audit →'}
+                {loading ? 'Sending...' : 'Book Free Discovery Call →'}
               </motion.button>
 
               <p className="text-[#444444] font-mono text-xs text-center">
-                No spam. No pitch. Just a 30-minute conversation about your business.
+                No spam. No pitch. Just a focused 30-minute conversation about your project.
               </p>
             </form>
           )}

@@ -2,8 +2,8 @@
 
 import ScrollReveal from '@/components/shared/ScrollReveal'
 
-const row1 = ['n8n', 'Python', 'OpenAI', 'Selenium', 'Playwright', 'Make.com', 'Zapier', 'PostgreSQL']
-const row2 = ['Next.js', 'Vercel', 'AWS', 'Docker', 'Anthropic', 'LangChain', 'Puppeteer', 'FastAPI']
+const row1 = ['n8n', 'Python', 'OpenAI', 'Power BI', 'Playwright', 'Make.com', 'Node.js', 'PostgreSQL', 'dbt', 'Zapier']
+const row2 = ['Next.js', 'React', 'AWS', 'Docker', 'Anthropic', 'ETL Pipelines', 'Supabase', 'FastAPI', 'LangChain', 'Airflow']
 
 function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
   const doubled = [...items, ...items]

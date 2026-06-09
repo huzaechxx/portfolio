@@ -3,22 +3,22 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Workflow, Bot, Code2, Database, Plug } from 'lucide-react'
+import { Workflow, Bot, Database, Plug, BarChart2, Monitor } from 'lucide-react'
 import ScrollReveal from '@/components/shared/ScrollReveal'
 
 const services = [
   {
     number: '01',
-    name: 'n8n Workflow Automation',
-    slug: 'n8n-workflow-automation',
+    name: 'Workflow Automation',
+    slug: 'workflow-automation',
     icon: Workflow,
     description:
-      'We design and deploy sophisticated n8n workflows that connect your tools, automate repetitive tasks, and trigger intelligent actions — all without a single line of code from your team.',
+      'We design and deploy intelligent automation systems using n8n, Make.com, and Zapier — connecting your tools, eliminating repetitive work, and triggering smart actions across your entire stack.',
     useCases: [
-      'Automated invoice generation & sending',
-      'CRM data sync across platforms',
-      'Lead nurturing email sequences',
+      'CRM data sync & lead nurturing sequences',
+      'Automated invoicing & document generation',
       'Slack/Teams notification pipelines',
+      'Multi-step approval & onboarding flows',
     ],
   },
   {
@@ -27,54 +27,68 @@ const services = [
     slug: 'ai-integration-agents',
     icon: Bot,
     description:
-      'We embed OpenAI, Anthropic, and custom LLM models directly into your business processes — from intelligent document processing to fully autonomous AI agents that handle decisions.',
+      'We embed OpenAI, Anthropic, and custom LLM models into your business processes — from intelligent document processing to fully autonomous agents that handle complex decisions end-to-end.',
     useCases: [
       'AI-powered customer support triage',
-      'Automated document summarization',
-      'Intelligent data extraction from PDFs',
-      'Autonomous agent workflows',
+      'Automated document summarization & extraction',
+      'Autonomous agent workflows & decision trees',
+      'Custom RAG pipelines & LLM fine-tuning',
     ],
   },
   {
     number: '03',
-    name: 'Python & Selenium Automation',
-    slug: 'python-selenium-automation',
-    icon: Code2,
+    name: 'Data Engineering & ETL',
+    slug: 'data-engineering',
+    icon: Database,
     description:
-      'When no-code tools hit their limits, we write robust Python scripts and Selenium automations that handle complex browser interactions, file processing, and system integrations.',
+      'We transform your raw data lake into clean, structured pipelines — building reliable ETL/ELT workflows, automating data ingestion, and engineering the data foundation your analytics and AI depend on.',
     useCases: [
-      'Form filling & data entry automation',
-      'Automated report generation',
-      'Browser-based testing pipelines',
-      'Legacy system integrations',
+      'Raw data lake → analytics-ready pipelines',
+      'Large-scale data migration & cleanup',
+      'Automated ETL/ELT with schema validation',
+      'Real-time & batch data ingestion workflows',
     ],
   },
   {
     number: '04',
-    name: 'Web Scraping & Data Pipelines',
-    slug: 'web-scraping-data-pipelines',
-    icon: Database,
+    name: 'Analytics & Business Intelligence',
+    slug: 'analytics-bi',
+    icon: BarChart2,
     description:
-      'We build production-grade scrapers with Playwright and Puppeteer that extract, clean, and deliver structured data to your database, spreadsheet, or dashboard — on any schedule.',
+      'We turn your structured data into actionable insights — building Power BI dashboards, custom reporting pipelines, and analytics views that give your team a real-time picture of performance.',
     useCases: [
-      'Competitor price monitoring',
-      'Real estate listing aggregation',
-      'Job board data collection',
-      'Market research automation',
+      'Power BI dashboard design & deployment',
+      'KPI reporting & executive dashboards',
+      'Data warehouse setup & optimization',
+      'Custom analytics for operations & sales',
     ],
   },
   {
     number: '05',
-    name: 'Custom API Integrations',
-    slug: 'custom-api-integrations',
+    name: 'Web & App Development',
+    slug: 'web-app-development',
+    icon: Monitor,
+    description:
+      'We build fast, scalable web applications, internal tools, and SaaS products using modern tech stacks — from concept to production, with clean architecture and seamless integrations built in from day one.',
+    useCases: [
+      'Web & mobile app development (Next.js, React)',
+      'SaaS product & internal tooling builds',
+      'Business process portals & admin panels',
+      'CRM / ERP custom frontend & backend',
+    ],
+  },
+  {
+    number: '06',
+    name: 'API & Systems Integration',
+    slug: 'api-systems-integration',
     icon: Plug,
     description:
-      'We connect any two systems that have an API — regardless of whether they have a native integration. From payment gateways to ERPs, we make your stack work as one.',
+      'We connect any two systems that expose an API — building robust middleware, webhooks, and integration layers that make your entire stack work as one coherent, reliable system.',
     useCases: [
-      'E-commerce ↔ accounting sync',
-      'CRM ↔ marketing platform sync',
-      'Webhook event processing',
-      'Multi-system data orchestration',
+      'E-commerce ↔ accounting & ERP sync',
+      'CRM ↔ marketing platform integrations',
+      'Webhook event processing & routing',
+      'Legacy system modernization & bridging',
     ],
   },
 ]
