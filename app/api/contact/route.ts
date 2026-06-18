@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     // Confirm to the client
     sendEmail({
       to: [{ email, name }],
-      subject: 'We got your message — Rdexa.tech',
+      subject: `We've received your message, ${name} — Rdexa.tech`,
       htmlContent: leadConfirmationEmail(name),
     }),
   ]).catch(console.error)
