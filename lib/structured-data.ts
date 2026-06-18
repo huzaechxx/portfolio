@@ -3,7 +3,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'AutoNord.ai',
+    name: 'Rdexa.tech',
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     description: 'AI automation and integration agency for modern businesses',
@@ -11,7 +11,7 @@ export function organizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'autonordai@gmail.com',
+      email: 'hello@rdexa.tech',
       availableLanguage: ['English'],
     },
   }
@@ -23,7 +23,7 @@ export function serviceSchema(name: string, description: string, url: string) {
     '@type': 'Service',
     name,
     description,
-    provider: { '@type': 'Organization', name: 'AutoNord.ai' },
+    provider: { '@type': 'Organization', name: 'Rdexa.tech' },
     url,
   }
 }
@@ -53,7 +53,7 @@ export function caseStudySchema(
     description,
     url,
     datePublished,
-    author: { '@type': 'Organization', name: 'AutoNord.ai' },
-    publisher: { '@type': 'Organization', name: 'AutoNord.ai' },
+    author: { '@type': 'Organization', name: 'Rdexa.tech' },
+    publisher: { '@type': 'Organization', name: 'Rdexa.tech' },
   }
 }

@@ -16,8 +16,8 @@ export async function sendEmail(params: SendEmailParams) {
 
   const body = {
     sender: {
-      email: process.env.BREVO_FROM_EMAIL || 'autonordai@gmail.com',
-      name: process.env.BREVO_FROM_NAME || 'AutoNord.ai',
+      email: process.env.BREVO_FROM_EMAIL || 'hello@rdexa.tech',
+      name: process.env.BREVO_FROM_NAME || 'Rdexa.tech',
     },
     to: params.to,
     subject: params.subject,
@@ -50,7 +50,7 @@ export function leadNotificationEmail(lead: {
     <div style="font-family: monospace; background: #0a0a0a; color: #f5f5f5; padding: 32px; border-radius: 4px; max-width: 600px;">
       <div style="border-bottom: 1px solid #1f1f1f; padding-bottom: 16px; margin-bottom: 24px;">
         <span style="color: #ff5500; font-size: 12px; text-transform: uppercase; letter-spacing: 4px;">New Lead</span>
-        <h2 style="color: #ffffff; margin: 8px 0 0; font-size: 22px;">AutoNord.ai Contact Form</h2>
+        <h2 style="color: #ffffff; margin: 8px 0 0; font-size: 22px;">Rdexa.tech Contact Form</h2>
       </div>
       <table style="width: 100%; border-collapse: collapse;">
         <tr>
@@ -68,7 +68,7 @@ export function leadNotificationEmail(lead: {
         </tr>
       </table>
       <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #1f1f1f;">
-        <a href="mailto:${lead.email}?subject=Re: Your AutoNord.ai inquiry" style="background: #ff5500; color: #fff; padding: 10px 20px; text-decoration: none; font-size: 13px; border-radius: 2px;">
+        <a href="mailto:${lead.email}?subject=Re: Your Rdexa.tech inquiry" style="background: #ff5500; color: #fff; padding: 10px 20px; text-decoration: none; font-size: 13px; border-radius: 2px;">
           Reply to ${lead.name} →
         </a>
       </div>
@@ -80,7 +80,7 @@ export function leadConfirmationEmail(name: string) {
   return `
     <div style="font-family: monospace; background: #0a0a0a; color: #f5f5f5; padding: 32px; border-radius: 4px; max-width: 600px;">
       <div style="border-bottom: 1px solid #1f1f1f; padding-bottom: 16px; margin-bottom: 24px;">
-        <span style="color: #ff5500; font-size: 12px; text-transform: uppercase; letter-spacing: 4px;">AutoNord.ai</span>
+        <span style="color: #ff5500; font-size: 12px; text-transform: uppercase; letter-spacing: 4px;">Rdexa.tech</span>
         <h2 style="color: #ffffff; margin: 8px 0 0; font-size: 22px;">We got your message, ${name}.</h2>
       </div>
       <p style="color: #888888; line-height: 1.7; margin: 0 0 16px;">
@@ -89,7 +89,7 @@ export function leadConfirmationEmail(name: string) {
       <p style="color: #888888; line-height: 1.7; margin: 0 0 24px;">
         In the meantime, feel free to browse our <a href="${process.env.NEXT_PUBLIC_SITE_URL}/case-studies" style="color: #ff5500;">case studies</a> to see what we've built for other businesses.
       </p>
-      <p style="color: #444444; font-size: 12px; margin: 0;">— The AutoNord.ai Team</p>
+      <p style="color: #444444; font-size: 12px; margin: 0;">— The Rdexa.tech Team</p>
     </div>
   `
 }

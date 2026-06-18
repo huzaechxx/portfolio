@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
@@ -48,11 +49,10 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-[#ff5500]">
-            <polygon points="10,2 18,18 2,18" fill="currentColor" />
-          </svg>
-          <span className="font-sans font-bold text-xl text-white tracking-tight">AutoNord.ai</span>
-          <span className="text-[#ff5500] text-xs font-mono">↗</span>
+          <Image src="/image-removebg-preview.png" alt="Rdexa logo" width={32} height={32} className="object-contain" />
+          <span className="font-sans font-bold text-xl tracking-tight">
+            <span className="text-[#ff5500]">Rdexa</span><span className="text-[#e0e0e0]">.tech</span>
+          </span>
         </Link>
 
         {/* Desktop links */}

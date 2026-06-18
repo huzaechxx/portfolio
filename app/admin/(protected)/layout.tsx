@@ -14,10 +14,10 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
       <aside className="w-56 border-r border-[#1f1f1f] flex flex-col">
         <div className="p-5 border-b border-[#1f1f1f]">
           <div className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-              <polygon points="10,2 18,18 2,18" fill="#ff5500" />
-            </svg>
-            <span className="font-sans font-bold text-white text-base">AutoNord.ai</span>
+            <img src="/image-removebg-preview.png" alt="Rdexa logo" width={22} height={22} style={{ objectFit: 'contain' }} />
+            <span className="font-sans font-bold text-base">
+              <span className="text-[#ff5500]">Rdexa</span><span className="text-[#e0e0e0]">.tech</span>
+            </span>
           </div>
           <p className="text-[#444444] font-mono text-xs mt-1">Admin Panel</p>
         </div>

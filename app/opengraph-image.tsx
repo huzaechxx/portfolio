@@ -1,11 +1,17 @@
 import { ImageResponse } from 'next/og'
+import fs from 'fs'
+import path from 'path'
 
-export const runtime = 'edge'
-export const alt = 'AutoNord.ai — AI Automation Agency'
+export const alt = 'Rdexa.tech — Software & Data Agency'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function Image() {
+  const logoBuffer = fs.readFileSync(
+    path.join(process.cwd(), 'public', 'image-removebg-preview.png')
+  )
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -15,41 +21,84 @@ export default async function Image() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
+          padding: '72px 80px',
           fontFamily: 'monospace',
-          position: 'relative',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            top: '-60px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '700px',
-            height: '400px',
-            background: 'radial-gradient(circle, rgba(255,85,0,0.25) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }}
-        />
-        <div style={{ fontSize: 80, fontWeight: 800, color: '#ff5500', letterSpacing: '-2px' }}>
-          AutoNord.ai
+        {/* Logo + brand */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={56} height={56} style={{ objectFit: 'contain' }} />
+          <span style={{ fontSize: '28px', fontWeight: 700, display: 'flex' }}>
+            <span style={{ color: '#ff5500' }}>Rdexa</span>
+            <span style={{ color: '#e0e0e0' }}>.tech</span>
+          </span>
         </div>
-        <div style={{ fontSize: 24, color: '#888888', marginTop: 16, letterSpacing: '6px' }}>
-          WE AUTOMATE. YOU SCALE.
+
+        {/* Headline */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <span
+            style={{
+              color: '#ffffff',
+              fontSize: '88px',
+              fontWeight: 800,
+              lineHeight: 1,
+              letterSpacing: '-4px',
+              textTransform: 'uppercase',
+            }}
+          >
+            WE BUILD.
+          </span>
+          <span
+            style={{
+              color: '#ff5500',
+              fontSize: '88px',
+              fontWeight: 800,
+              lineHeight: 1,
+              letterSpacing: '-4px',
+              textTransform: 'uppercase',
+            }}
+          >
+            YOU SCALE.
+          </span>
+          <p
+            style={{
+              color: '#888888',
+              fontSize: '22px',
+              marginTop: '20px',
+              lineHeight: 1.5,
+              maxWidth: '680px',
+            }}
+          >
+            Custom software, data pipelines, and AI automation built for modern businesses.
+          </p>
         </div>
-        <div
-          style={{
-            fontSize: 18,
-            color: '#444444',
-            marginTop: 24,
-            maxWidth: 700,
-            textAlign: 'center',
-            lineHeight: 1.6,
-          }}
-        >
-          AI workflows and automation systems built for modern businesses.
+
+        {/* Bottom bar */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            {['Software Dev', 'Data Engineering', 'AI Automation'].map((tag) => (
+              <div
+                key={tag}
+                style={{
+                  background: '#141414',
+                  border: '1px solid #2a2a2a',
+                  color: '#666666',
+                  fontSize: '12px',
+                  padding: '6px 14px',
+                  borderRadius: '2px',
+                  letterSpacing: '1.5px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
+          <span style={{ color: '#444444', fontSize: '14px', letterSpacing: '1px' }}>
+            rdexa.tech
+          </span>
         </div>
       </div>
     ),

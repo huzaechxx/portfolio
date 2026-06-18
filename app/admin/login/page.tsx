@@ -35,11 +35,9 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <polygon points="10,2 18,18 2,18" fill="#ff5500" />
-            </svg>
-            <span className="font-sans font-bold text-xl text-white">
-              AutoNord.ai
+            <img src="/image-removebg-preview.png" alt="Rdexa logo" width={28} height={28} style={{ objectFit: 'contain' }} />
+            <span className="font-sans font-bold text-xl">
+              <span className="text-[#ff5500]">Rdexa</span><span className="text-[#e0e0e0]">.tech</span>
             </span>
           </div>
           <p className="text-[#444444] font-mono text-sm">

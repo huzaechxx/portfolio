@@ -138,7 +138,7 @@ export default function ContactPage() {
             {/* Info */}
             <div className="space-y-8">
               {[
-                { icon: Mail, label: 'Email', value: 'autonordai@gmail.com' },
+                { icon: Mail, label: 'Email', value: 'hello@rdexa.tech' },
                 { icon: MapPin, label: 'Based In', value: 'Pakistan' },
                 { icon: Clock, label: 'Response Time', value: 'Within 24 hours' },
               ].map(({ icon: Icon, label, value }) => (

@@ -16,12 +16,12 @@ export async function POST(req: NextRequest) {
   })
 
   // Fire-and-forget emails (don't block the response)
-  const notifyTo = process.env.BREVO_NOTIFY_TO || 'autonordai@gmail.com'
+  const notifyTo = process.env.BREVO_NOTIFY_TO || 'hello@rdexa.tech'
 
   Promise.allSettled([
     // Notify the admin
     sendEmail({
-      to: [{ email: notifyTo, name: 'AutoNord.ai' }],
+      to: [{ email: notifyTo, name: 'Rdexa.tech' }],
       subject: `New lead from ${name}${company ? ` (${company})` : ''}`,
       htmlContent: leadNotificationEmail({ name, email, company, message }),
       replyTo: { email, name },
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     // Confirm to the client
     sendEmail({
       to: [{ email, name }],
-      subject: 'We got your message — AutoNord.ai',
+      subject: 'We got your message — Rdexa.tech',
       htmlContent: leadConfirmationEmail(name),
     }),
   ]).catch(console.error)
